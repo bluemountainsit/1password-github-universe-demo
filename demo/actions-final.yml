@@ -1,0 +1,38 @@
+name: publish-docker
+on: push
+
+jobs:
+  docker-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Load Docker secrets from 1Password
+        id: op-docker-creds
+        uses: 1password/load-secrets-action@v1
+        with:
+          export-env: false
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          DOCKER_USERNAME: op://ci-cd/docker/username
+          DOCKER_PASSWORD: op://ci-cd/docker/token
+
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ steps.op-docker-creds.outputs.DOCKER_USERNAME }}
+          password: ${{ steps.op-docker-creds.outputs.DOCKER_PASSWORD }}
+
+      - name: Build and publish
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: bluemountainsit/1password-github-universe-demo:latest

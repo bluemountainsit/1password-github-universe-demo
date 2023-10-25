@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%=title %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 style="margin-top: 2rem;"><%=title %></h1>
+      <div class="card" style="width: 32rem;">
+        <div class="card-body">
+          <p class="card-text">Please help us decide the best ice cream flavour by selecting your favourite below.</p>
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="vanilla" value="vanilla" class="custom-control-input">
+                <label class="custom-control-label" for="vanilla">Vanilla</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="chocolate" value="chocolate" class="custom-control-input">
+                <label class="custom-control-label" for="chocolate">Chocolate</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="butterpecan" value="butterpecan" class="custom-control-input">
+                <label class="custom-control-label" for="butterpecan">Butter pecan</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="strawberry" value="strawberry" class="custom-control-input">
+                <label class="custom-control-label" for="strawberry">Strawberry</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="cookiesncream" value="cookiesncream" class="custom-control-input">
+                <label class="custom-control-label" for="cookiesncream">Cookies n' Cream</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="flavour" id="rockyroad" value="rockyroad" class="custom-control-input">
+                <label class="custom-control-label" for="rockyroad">Rocky road</label>
+              </div>
+            </div>
+            <div class="form-group" style="margin-top: 1rem;">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="sprinkles" name="sprinkles">
+                <label class="custom-control-label" for="sprinkles">With sprinkles</label>
+              </div>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary" style="margin-top: 1rem;"/>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

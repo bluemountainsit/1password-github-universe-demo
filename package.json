@@ -1,0 +1,17 @@
+{
+  "name": "connect-app-example",
+  "version": "1.0.0",
+  "description": "An example application in JS highlighting what can be done with Connect",
+  "main": "index.js",
+  "dependencies": {
+    "@1password/connect": "*",
+    "ejs": "*",
+    "express": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
