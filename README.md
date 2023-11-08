@@ -5,4 +5,3 @@ This demo app provides an example of how to use Github Actions to deploy an imag
 new text
 
 demo
-l
